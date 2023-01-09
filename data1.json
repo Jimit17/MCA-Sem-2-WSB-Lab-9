@@ -1,0 +1,26 @@
+[
+    {
+       "id":1,
+       "sender":"Lalitha",
+       "reciever":"Lalitha's Mom",
+       "distance":"14",
+       "content":"Household Items",
+       "intructions":"Caution: Really Hot"
+    },
+    {
+       "id":2,
+       "sender":"Lolitha",
+       "reciever":"Lolitha's Sister",
+       "distance":"46",
+       "content":"Other",
+       "intructions":"Fragile: Handle with care"
+    },
+    {
+       "id":3,
+       "sender":"Lilitha",
+       "reciever":"Lilitha's Dad",
+       "distance":"27",
+       "content":"Medicines",
+       "intructions":"Do not expose to sun light"
+    }
+ ]

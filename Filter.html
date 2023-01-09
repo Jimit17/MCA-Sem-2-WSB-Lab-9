@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Orders</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"
+        integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./public/JS/app.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+
+
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+            border-collapse: collapse;
+            font-family: 'Roboto Mono', monospace;
+
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        th {
+            padding: 5px;
+            text-align: left;
+            background-color: #053e1b;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #tablediv {
+            background-color: rgb(255, 255, 255);
+            width: fit-content;
+            margin: auto;
+            padding: 30px;
+            color: black;
+            border-radius: 10px;
+            margin-bottom: 100px;
+        }
+
+        label {
+            font-weight: 700;
+            padding-right: 20px;
+
+            font-family: 'Roboto Mono', monospace;
+            width: 200px;
+        }
+
+        input {
+            font-family: 'Roboto Mono', monospace;
+            margin-left: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+
+        .Low {
+            color: rgb(0, 183, 0);
+        }
+
+        .High {
+            color: rgb(255, 0, 0);
+        }
+
+        .Medium {
+            color: rgb(240, 144, 26);
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="myApp">
+
+        <div id="tablediv">
+            <label style="margin-left: 30px;">Rows to Display:</label><input type="number" step="1" min="0" max="3"
+                ng-model="rowlimit" /><br><br>
+        </div>
+
+        <div ng-controller="Fltr">
+            <h2 style="margin-top: 0px;margin-left: 39%;">Delivery Schedule </h2>
+            <center>
+                <table>
+                    <tr>
+                        <th>ID <i class="fa fa-sort" ng-click="orderByMe('id')"></i></th>
+                        <th>Sender <i class="fa fa-sort" ng-click="orderByMe('sender')"></i></th>
+                        <th>Reciever <i class="fa fa-sort" ng-click="orderByMe('reciever')"></i></th>
+                        <th>Distance <i class="fa fa-sort" ng-click="orderByMe('distance')"></i></th>
+                        <th>Content</th>
+                        <th>Instructions</th>
+
+
+                    </tr>
+
+                    <tr
+                        ng-repeat="fd1 in fd|limitTo:rowlimit|filter:searchtxt|orderBy:myOrderBy|filter:changeColorFilter">
+
+                        <td>{{fd1.id}}</td>
+                        <td>{{fd1.sender}}</td>
+                        <td>{{fd1.reciever}}</td>
+                        <td class="{{fd1.class}}" style="font-weight: bold;">{{fd1.distance}} kms</td>
+                        <td>{{fd1.content}}</td>
+                        <td>{{fd1.intructions}}</td>
+
+
+                    </tr>
+
+                </table>
+            </center>
+        </div>
+        <br><br>
+    </div>
+    </div>
+
+</body>
+
+</html

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"
+        integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="public/CSS/Style.css">
+    <title>DelEazzy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+    <script type="text/javascript" src="public/JS/Scripts.js"></script>
+    <title>Register</title>
+</head>
+<body>
+  <div id="reg">
+    <h2 style="color: #053e1b;margin-top: 50px;">New here ?</h2>
+    <p style="margin-bottom: 20px; margin-top:0px;"><b>Please fill in this form to create an account.</b></p>
+
+    <form id="signup" method="POST" action="/json-data">
+      <div class="container">    
+        <label> First Name: </label>   
+        <input id="fn" type="text" name="firstname" onblur="validateName()" placeholder= "Firstname" required/>   
+
+        <label> Last Name: </label>   
+        <input id="ln" type="text" name="lastname" onblur="validateName()" placeholder="Lastname" required/>   
+        <div id="errdiv" style="margin-left:-10px;">
+          <span id="error"></span>
+        </div>
+
+        <div>  
+          <label>Occupation: </label>
+          <select>
+            <option value="Student">Student</option>  
+            <option value="Working Professional">Working Professional</option>  
+            <option value="Homemaker">Homemaker</option>  
+          </select>  
+        </div>  
+
+        <div><br> 
+          <label>Gender :</label>
+            <input type="radio" value="Male" name="gender" checked > Male   
+            <input type="radio" value="Female" name="gender"> Female   
+            <input type="radio" value="Other" name="gender"> Other  
+        </div><br> 
+
+        <label>Phone :</label>  
+        <input id="cd" type="text" name="country_code" placeholder="Country Code" onblur="validateCode()" size="2" required/>
+        <div id="errdiv" style="margin-left:-10px;">
+          <span id="error1"></span>
+        </div> 
+        <input id="ph" type="tel" name="phone" onblur="validatePhone()" placeholder="Phone no." size="10" required/>
+        <div id="errdiv" style="margin-left:-10px;">
+          <span id="error2"></span>
+        </div> 
+
+        <label>Current Address :  </label>
+        <textarea cols="80" rows="5" placeholder="Current Address" value="address" id="ca" required></textarea>  
+        
+        <label for="email"><b>Email</b></label>  
+        <input type="email" placeholder="Enter Email" name="email" id="mail" onblur="validateEmail()" required>  
+        <div id="errdiv" style="margin-left:-10px;">
+          <span id="error3"></span>
+        </div>
+        
+        <label for="psw"><b>Password</b></label>  
+        <input type="password" placeholder="Enter Password" name="psw" id="pass" onblur="validatePassword()" required>
+        <input type="hidden" name="hide" id="hide" />  
+        
+        <label for="psw-repeat"><b>Confirm Password</b></label>  
+        <input type="password" placeholder="Confirm Password" name="psw_repeat" id="passr" onblur="validatePassword()" required>  
+        <div id="errdiv" style="margin-left:-10px;">
+          <span id="error4"></span>
+        </div>
+
+        <button type="submit" onclick="storeValues()" class="registerbtn">Sign Up</button> 
+    </form>
+    </div>
+    </div>
+  <script>
+    var maxBirthdayDate = new Date();
+        maxBirthdayDate.setFullYear( maxBirthdayDate.getFullYear() - 18 );
+        maxBirthdayDate.setMonth(maxBirthdayDate.getMonth() ,maxBirthdayDate.getDate());
+        $( "#bd" ).datepicker({
+          dateFormat: 'dd.mm.yy',
+          changeMonth: true,
+          changeYear: true,
+          maxDate: maxBirthdayDate,
+          yearRange: '-125:'+maxBirthdayDate.getFullYear(),
+        });
+
+        const element = document.getElementById("fn");
+        element.addEventListener("keypress", function (e) 
+        {
+            preventnum(e);
+        });
+
+        const element1 = document.getElementById("ln");
+        element1.addEventListener("keypress", function (e) 
+        {
+            preventnum(e);
+        });
+
+        function preventnum(e) {
+          if (!isNaN(e.key)) {
+              e.preventDefault();
+          }
+        }
+
+        const element2 = document.getElementById("ph");
+        element2.addEventListener("keypress", function (e) 
+        {
+           preventalpha(e);
+        });
+
+        const element3 = document.getElementById("cd");
+        element3.addEventListener("keypress", function (e) 
+        {
+           preventalpha(e);
+        });
+
+        function preventalpha(e) {
+          if (isNaN(e.key)) {
+              e.preventDefault();
+          }
+        }
+  </script>
+</body>
+</html>

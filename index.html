@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"
+          integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+      <link rel="stylesheet" type="text/css" href="public/CSS/Style.css">
+      <title>DelEazzy</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+      <script type="text/javascript" src="public/JS/Scripts.js"></script>
+    
+  </head>
+  <body onload="background('#d8dea7')">
+  <div>
+      <div id="a" >
+      <nav>
+          <ul>
+              <li><a href="#top"  onclick="play()"><b><em><i class="fa fa-home fa-2x"></i>DelEazzy</em></b></a></li>
+              <audio id="audio" src="public/AV/DelEazzy Company Audio ft. Room 808 (Official).m4a" ></audio>
+                <li id="so"><a href="/register"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Register</b></a></li>
+                <li id="fo"><a href="/filter"><b>Filter Orders</b></a></li>
+                <li id="ab"><a href="#about"><b>About</b></a></li>  
+          </ul>
+        </nav>
+      <img src="public/images/Delivery Boy.png" alt="Delivery Boy" id="db"/>
+      </div>
+      <div id="d1">
+          <h1>Delivery Made Easy</h1>
+          <h2>Door to Door only DelEazzy !</h2>
+          <button type="button" onclick="window.location.href='https://play.google.com/store/apps';" class="appbtn">Get the App</button>
+          <button type="button" onclick="getlocation()" class="appbtn">Do we deliver at your location ?</button>        
+      </div>
+      <img id="wave"/>
+      <div id="about1">
+        <div>  
+            <table>
+                <tr>
+                <th colspan="3" id="top3">
+                  <b>Top Delivery Timings</b>
+                </th>
+              </tr>
+                <tr>
+                    <th> Time of the Day </th>
+                    <th> On time Delivery % </th>
+                    <th> Why this Time ? </th>
+                </tr>
+              <tr>
+                <td><h4>9:00 am</h4><br></td>
+                <td><em>92%</em></td>
+                <td><a href="https://en.wikipedia.org/wiki/Morning" target="_blank">Morning</a> is the time when most people go to the office and they tend to forget things 💁🏻‍♂️</td>
+              </tr>
+              <tr>
+                <td><h4>1:00 pm</h4><br></td>
+                <td><em>97%</em></td>
+                <td>Who does not like <a href="https://en.wikipedia.org/wiki/Lunch" target="_blank">Lunch</a> ? And Most home cooked food is sent to workplace fresh using DelEazzy 🤯</td>
+              </tr>
+              <tr>
+                <td><h4>11:00 pm</h4><br></td>
+                <td><em>99%</em></td>
+                <td>Late <a href="https://en.wikipedia.org/wiki/Night" target="_blank">Night</a> street food craving is the culprit behind this peak ! 🤤 </td>
+              </tr>
+            </table> 
+        </div>
+      <div id="about" >
+          <h2 style="color: #053e1b;">About Us</h2>
+          <p id="abouttext">
+          DelEazzy aims to deliver packages within city to get your last-minute essentials delivered through a network of delivery partners.
+          With the rise of traffic in cities, our expert partners will Pick up | Buy | Send | Anything you need, get delivered Get updates at every stage from pick up to drop off, from the comfort of your home.
+          </p>
+          <div class="cards">
+              <div class="card" style="float: left;">
+                  <img src="public/images/target.png" alt="Avatar" style="width: 240px;height: 240px;">
+                  <div class="container1">
+                      <h4><b>Our Goals</b></h4>
+                    <ol style="padding:0px;">
+                      <li>Fast delivery</li>
+                      <li>Be cost-effective</li>
+                      <li>Reach more People</li>
+                    </ol>
+                  </div>
+              </div>
+              <div class="card1" style="float: right;">
+                  <img src="public/images/contact.png" alt="Avatar" usemap="#contact_us" style="width: 240px;height: 240px;">
+                  <map name="contact_us">
+                    <area target="_self" alt="SMS" title="SMS" href="sms:+9120129020" coords="55,183,30" shape="circle">
+                    <area target="_self" alt="Call" title="Call" href="tel:+91120129020" coords="117,184,30" shape="circle">
+                    <area target="_self" alt="E-Mail" title="E-Mail" href="mailto:deleazzy@gmail.com" coords="179,186,30" shape="circle">
+                  </map>
+                  <div class="container1">
+                  <h4><b>Contact Us</b></h4>
+                  <ol style="padding:0px;">
+                      <li>Email: <a href="mailto:deleazzy@gmail.com">deleazzy@gmail.com</a></li>
+                      <li>Phone: <a href="tel:+91120129020>">+91 1201290201</a></li>
+                      <li>Instagram: <a href="https://www.instagram.com">@deleazzy</a></li>
+                    </ol>
+                  </div>
+              </div>
+              <div class="card1" style="float: right;">
+                  <img src="public/images/location.png" alt="Avatar" style="width: 240px; height: 240px; padding-left: 40px;">
+                  <div class="container1">
+                  <h4><b>Available Locations</b></h4>
+                  <ol style="padding:0px;">
+                      <li>Bangalore</li>
+                      <li>Delhi</li>
+                      <li>Mumbai</li>
+                    </ol>
+                  </div>
+              </div>
+              
+            </div>
+      </div>
+      <br>  
+      <video width="1280" height="720" controls>
+        <source src="public/AV/diwali-chores-on-your-mind-geniedekhlega.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video> 
+      <footer>
+        <canvas id="logocanvas" width="170" height="100" >
+          Your browser does not support the HTML canvas tag.
+          </canvas>
+      </footer>  
+
+      <script type="text/javascript">
+        var c = document.getElementById("logocanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "20px Roboto Mono, monospace";
+        var gradient = ctx.createLinearGradient(0, 0, 150, 100);
+        gradient.addColorStop(0, "rgb(5, 62, 27)");
+        gradient.addColorStop(1, "rgb(216, 222, 167)");
+        ctx.fillStyle = gradient;
+        ctx.fillText("©DelEazzy💨",10,50);
+      </script>
+  </div>
+  </body>
+  </html>
